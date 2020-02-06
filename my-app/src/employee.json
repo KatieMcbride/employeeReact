@@ -9,28 +9,28 @@
     },
     {
       "id": 2,
-      "name": "Mr. Krabs",
+      "name": "Taylor",
       "image": "https://vignette3.wikia.nocookie.net/vsbattles/images/8/80/Mr._Krabs.png/revision/latest?cb=20150919162131",
       "department": "Web Developer",
       "position": "Jr. Web Developer"
     },
     {
       "id": 3,
-      "name": "Squidward",
+      "name": "Charlotte",
       "image": "https://vignette2.wikia.nocookie.net/fictionalcharacters/images/a/ac/Squidward.png/revision/latest?cb=20131121012626",
       "department": "Web Developer",
       "position": "Jr. Web Developer"
     },
     {
       "id": 4,
-      "name": "Dexter",
+      "name": "Grace",
       "image": "https://s-media-cache-ak0.pinimg.com/originals/fe/32/49/fe32495d45283cd6860ae122f0aeaad9.png",
       "department": "Web Developer",
       "position": "Jr. Web Developer"
     },
     {
       "id": 5,
-      "name": "Courage",
+      "name": "Scott",
       "image": "https://vignette4.wikia.nocookie.net/vsbattles/images/3/39/Courage-0.png/revision/latest?cb=20160719055423",
       "Department": "A Cowardly Dog",
       "department": "Web Developer",
@@ -38,21 +38,21 @@
     },
     {
       "id": 6,
-      "name": "Doug Funnie",
+      "name": "Brent",
       "image": "https://vignette1.wikia.nocookie.net/doug/images/3/3b/Doug001.gif/revision/latest?cb=20110807170511",
       "department": "Web Developer",
       "position": "Jr. Web Developer"
     },
     {
       "id": 7,
-      "name": "Bugs Bunny",
+      "name": "Adam",
       "image": "https://vignette2.wikia.nocookie.net/deathbattlefanon/images/2/2b/Bugs_Bunny.png/revision/latest?cb=20151206010607",
       "department": "Web Developer",
       "position": "Jr. Web Developer"
     },
     {
       "id": 8,
-      "name": "Johnny Bravo",
+      "name": "Sally",
       "image": "http://vignette3.wikia.nocookie.net/p__/images/9/9a/Johnny_Bravo.png/revision/latest?cb=20131031233339&path-prefix=protagonist",
       "department": "Web Developer",
       "position": "Jr. Web Developer"
