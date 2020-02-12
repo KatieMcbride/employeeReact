@@ -1,38 +1,80 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import EmployeeCard from "./components/employeeCard";
 import Wrapper from "./components/Wrapper/Wrapper";
-import employees from "./employee.json";
-import EmployeeContainer from "./components/EmployeeContainer"
+import employeesData from "./utils/employee.json";
+// import SearchForm from './components/SearchBar'
+
 
 
 function App() {
 
-  return <EmployeeContainer />;
+  /* state */
+ const [ employees, setEmployees] = useState(employeesData || []);
+ const [ search, setSearch] = useState('');
+//  const [ searchResults, setSearchResults ] = useState([]);
 
-  // /* state */
-  // state = {
-  //   employees
-  // };
+ const results = employees.filter(employee =>
+  employee.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
+  )
 
 
-  // /* render */
-  // render() {
-  //   return (
-  //     <Wrapper>
-  //       <h1 className="title">Employee List</h1>
-  //       {this.state.employees.map(employee => (
-  //           <EmployeeCard
-  //           id={employee.id}
-  //           key={employee.id}
-  //           name={employee.name}
-  //           image={employee.image}
-  //           department={employee.department}
-  //           position={employee.position}
-  //         />
-  //       ))}
-  //     </Wrapper>
-  //   );
-  // }
-}
+//  useEffect(() => {
+//    setEmployees(employeesData);
+//    console.log(employeesData);
+
+//   }, [search]);
+  
+ 
+  const handleInputChange = event => {
+    console.log(event.target.value)
+    setSearch(event.target.value);
+
+   
+    setEmployees(results)
+
+  }
+  
+
+  /* render */
+  return (
+      <Wrapper>
+
+        <h1 className="title">Employee List</h1>
+
+        <form className="search">
+          <div className="form-group">
+            <label htmlFor="language">Search Name:</label>
+              <input
+                 value={search}
+                 onChange={handleInputChange}
+                 name="term"
+                 className="form-control"
+                 placeholder="Type in a search term to begin"
+                 id="term"
+              />
+          </div>
+        </form>
+
+        
+
+        {results.map(employee => (
+           <EmployeeCard
+           id={employee.id}
+           key={employee.id}
+           name={employee.name}
+           image={employee.image}
+           department={employee.department}
+           position={employee.position}
+         />
+        ))}
+      
+      </Wrapper>
+    );
+  
+};
 
 export default App;
+
+
+
+
