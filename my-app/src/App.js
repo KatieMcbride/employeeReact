@@ -30,7 +30,7 @@ function App() {
     setSearch(event.target.value);
 
    
-    setEmployees(results)
+    // setEmployees(results)
 
   }
   
