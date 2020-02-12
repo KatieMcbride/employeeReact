@@ -11,27 +11,23 @@ function App() {
   /* state */
  const [ employees, setEmployees] = useState(employeesData || []);
  const [ search, setSearch] = useState('');
-//  const [ searchResults, setSearchResults ] = useState([]);
+ const [ salary, setSalary ] = useState([]);
 
  const results = employees.filter(employee =>
   employee.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
   )
 
-
-//  useEffect(() => {
-//    setEmployees(employeesData);
-//    console.log(employeesData);
-
-//   }, [search]);
+  const sortBySalary = () => {
+    const sorted = employees.sort((a, b) => {
+      return b.salary - a.salary;
+    });
+    setSalary(sorted);
+  };
   
  
   const handleInputChange = event => {
     console.log(event.target.value)
     setSearch(event.target.value);
-
-   
-    // setEmployees(results)
-
   }
   
 
@@ -40,6 +36,7 @@ function App() {
       <Wrapper>
 
         <h1 className="title">Employee List</h1>
+        <button onClick={sortBySalary}>Sort by Salary</button>
 
         <form className="search">
           <div className="form-group">
@@ -65,6 +62,7 @@ function App() {
            image={employee.image}
            department={employee.department}
            position={employee.position}
+           salary={employee.salary}
          />
         ))}
       

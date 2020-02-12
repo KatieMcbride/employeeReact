@@ -21,6 +21,9 @@ function employeeCard(props) {
           <li>
             <strong>Position:</strong> {props.position}
           </li>
+          <li>
+          <strong>Salary:</strong> {props.salary}
+          </li>
         </ul>
       </div>
     </div>
