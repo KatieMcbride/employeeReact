@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import EmployeeCard from "./components/employeeCard";
 import Wrapper from "./components/Wrapper/Wrapper";
 import employeesData from "./utils/employee.json";
-// import SearchForm from './components/SearchBar'
+import SearchBar from "./components/SearchBar/SearchBar";
+import Sort from "./components/Sort";
+// import SortButton from "./components/SortButton"
+
 
 
 
@@ -11,18 +14,16 @@ function App() {
   /* state */
  const [ employees, setEmployees] = useState(employeesData || []);
  const [ search, setSearch] = useState('');
- const [ salary, setSalary ] = useState([]);
+
 
  const results = employees.filter(employee =>
   employee.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
   )
 
-  const sortBySalary = () => {
-    const sorted = employees.sort((a, b) => {
-      return b.salary - a.salary;
-    });
-    setSalary(sorted);
-  };
+ const handleSort = (newOrder) => {
+   console.log('inside handle sort!!!', newOrder)
+  setEmployees([...newOrder])
+ }
   
  
   const handleInputChange = event => {
@@ -31,26 +32,14 @@ function App() {
   }
   
 
+  console.log('this is eployess state in APp.js!!!!', employees)
+
   /* render */
   return (
       <Wrapper>
-
         <h1 className="title">Employee List</h1>
-        <button onClick={sortBySalary}>Sort by Salary</button>
-
-        <form className="search">
-          <div className="form-group">
-            <label htmlFor="language">Search Name:</label>
-              <input
-                 value={search}
-                 onChange={handleInputChange}
-                 name="term"
-                 className="form-control"
-                 placeholder="Type in a search term to begin"
-                 id="term"
-              />
-          </div>
-        </form>
+        <Sort tomemployees={employees} handleSort={handleSort}/>
+        <SearchBar />
 
         
 
