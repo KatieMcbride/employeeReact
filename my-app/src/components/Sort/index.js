@@ -13,12 +13,12 @@ function Sort(props) {
           return b.salary - a.salary;
         });
         console.log('sorted working ??', sorted)
-        console.log('we want to set our eployess!!', props.handleSort);
+        console.log('we want to set our employess!!', props.handleSort);
         props.handleSort(sorted);
       };
       console.log('this is state in sort file', salary)
       return (
-        // <SortButton />
+      
         <button onClick={sortBySalary} className="sortButton">Sort by Salary</button>
         
       )

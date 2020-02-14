@@ -4,7 +4,7 @@ import Wrapper from "../components/Wrapper/Wrapper";
 import employeesData from "../utils/employee.json";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Sort from "../components/Sort/index.js";
-// import SortButton from "./components/SortButton"
+
 
 
 function Home() {
@@ -27,9 +27,7 @@ function Home() {
    console.log('inside handle sort!!!', newOrder)
   setEmployees([...newOrder])
  }
-  
 
-  // console.log('this is eployess state in APp.js!!!!', employees)
 
   /* render */
   return (
