@@ -7,8 +7,6 @@ import Sort from "./components/Sort";
 // import SortButton from "./components/SortButton"
 
 
-
-
 function App() {
 
   /* state */
@@ -25,14 +23,13 @@ function App() {
   setEmployees([...newOrder])
  }
   
- 
   const handleInputChange = event => {
     console.log(event.target.value)
     setSearch(event.target.value);
   }
   
 
-  console.log('this is eployess state in APp.js!!!!', employees)
+  // console.log('this is eployess state in APp.js!!!!', employees)
 
   /* render */
   return (
