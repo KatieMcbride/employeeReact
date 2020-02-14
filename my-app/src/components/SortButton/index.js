@@ -6,3 +6,5 @@ function SortButton(props) {
 }
 
 export default SortButton;
+
+// <button onClick={sortBySalary} className="sortButton">Sort by Salary</button>

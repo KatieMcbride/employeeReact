@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-// import SortButton from "../SortButton/index"
+import SortButton from "../SortButton/index"
 import './style.css'
 
 
 function Sort(props) {
    
     const [ salary, setSalary ] = useState([]);
+    
 
     const sortBySalary = () => {
         const sorted = props.tomemployees.sort((a, b) => {
@@ -19,6 +20,7 @@ function Sort(props) {
       return (
         // <SortButton />
         <button onClick={sortBySalary} className="sortButton">Sort by Salary</button>
+        
       )
 
 };
