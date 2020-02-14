@@ -19,7 +19,7 @@ function Sort(props) {
       console.log('this is state in sort file', salary)
       return (
       
-        <button onClick={sortBySalary} className="sortButton">Sort by Salary</button>
+        <button onClick={sortBySalary} className="sortButton">Sort by Salary. High to low</button>
         
       )
 

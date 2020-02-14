@@ -4,6 +4,7 @@ import Wrapper from "../components/Wrapper/Wrapper";
 import employeesData from "../utils/employee.json";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Sort from "../components/Sort/index.js";
+import Navbar from "../components/Navbar";
 
 
 
@@ -32,7 +33,8 @@ function Home() {
   /* render */
   return (
       <Wrapper>
-        <h1 className="title">Employee List</h1>
+         <Navbar /> 
+        
         <Sort tomemployees={employees} handleSort={handleSort}/>
         <SearchBar searchChange={ handleInputChange} test='testingggg' employees={employees} search={search} setSearch={setSearch}/>
         {results.map(employee => (
