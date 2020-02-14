@@ -1,48 +1,57 @@
 import React, { useState, useEffect } from "react";
+import EmployeeCard from "../components/employeeCard";
+import Wrapper from "../components/Wrapper/Wrapper";
+import employeesData from "../utils/employee.json";
+import SearchBar from "../components/SearchBar/SearchBar";
+import Sort from "../components/Sort/index.js";
+// import SortButton from "./components/SortButton"
 
 
-function Search() {
-//   const [name, setName] = useState('');
- 
+function Home() {
 
-//   // When the component mounts, update the title to be Wikipedia Searcher
-//   useEffect(() => {
-//     API.searchTerms(search)
-//       .then(res => {
-//         if (res.data.length === 0) {
-//           throw new Error("No results found.");
-//         }
-//         if (res.data.status === "error") {
-//           throw new Error(res.data.message);
-//         }
-//         setTitle(res.data[1]);
-//         setDescription(res.data[2][0]);
-//         setUrl(res.data[3][0]);
-//       })
-//       .catch(err => setError(err));
-//   }, [search]);
-//   const handleInputChange = event => {
-//     setSearch(event.target.value);
-//   };
+  /* state */
+ const [ employees, setEmployees] = useState(employeesData || []);
+ const [ search, setSearch] = useState('');
 
-//   return (
-//     <div>
-//       <Container style={{ minHeight: "100vh" }}>
-//         <h1 className="text-center">Search For Anything on Wikipedia</h1>
-//         <Alert type="danger" style={{ opacity: error ? 1 : 0, marginBottom: 10 }}>
-//           {error}
-//         </Alert>
-//         <SearchForm
-//           handleInputChange={handleInputChange}
-//           results={search}
-//         />
-//         <SearchResults
-//           title={title}
-//           description={description}
-//           url={url}
-//         />
-//       </Container>
-//     </div>
-//   );
-// }
-export default Search;
+ const handleInputChange = event => {
+    console.log(event.target.value)
+    console.log("working?")
+    setSearch(event.target.value);
+  }
+
+  const results = employees.filter(employee =>
+    employee.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
+  )
+
+ const handleSort = (newOrder) => {
+   console.log('inside handle sort!!!', newOrder)
+  setEmployees([...newOrder])
+ }
+  
+
+  // console.log('this is eployess state in APp.js!!!!', employees)
+
+  /* render */
+  return (
+      <Wrapper>
+        <h1 className="title">Employee List</h1>
+        <Sort tomemployees={employees} handleSort={handleSort}/>
+        <SearchBar searchChange={ handleInputChange} test='testingggg' employees={employees} search={search} setSearch={setSearch}/>
+        {results.map(employee => (
+           <EmployeeCard
+           id={employee.id}
+           key={employee.id} 
+           name={employee.name}
+           image={employee.image}
+           department={employee.department}
+           position={employee.position}
+           salary={employee.salary}
+         />
+        ))}
+      
+      </Wrapper>
+    );
+  
+};
+
+export default Home;
